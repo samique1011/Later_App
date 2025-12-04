@@ -17,6 +17,7 @@
     "react-router-dom": "^7.9.6",
     "react-twitter-embed": "^4.0.4",
     "react-youtube": "^10.1.0",
+    "recoil": "^0.7.7",
     "router-dom": "^3.0.3"
   },
   "devDependencies": {

@@ -1,8 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "tsc -b",
-    "execute": " node ./backend/dist/express.js"
+    "dev" : "tsc -b && node backend/dist/express.js"
   },
   "dependencies": {
     "@types/bcrypt": "^6.0.0",
