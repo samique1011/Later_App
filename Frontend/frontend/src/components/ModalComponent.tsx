@@ -3,6 +3,10 @@ import CrossIconSvg from "../icons/cross-svgrepo-com.svg"
 import { Button } from "./button"
 import { BACKEND_URL } from "../config/backend_url"
 import axios from "axios"
+import { refresherAtom } from "../atoms/refreshAtom";
+import { useRecoilState } from "recoil"
+import { startTransition } from "react"
+
 interface InputBoxes {
     placeholder : string , 
     onChange? : () => void , 
@@ -10,14 +14,14 @@ interface InputBoxes {
 }
 interface ModalComponent {
     open : boolean , 
-    onClose : () => void , 
-    onIncrement : () => void
+    onClose : () => void 
 }
 export default function ModalComponent(props : ModalComponent ){
     const titleRef = useRef<HTMLInputElement>(null);
     const linkRef = useRef<HTMLInputElement>(null);
     const textRef = useRef<HTMLInputElement>(null);
 
+    const [refresher , setRefresher] = useRecoilState(refresherAtom);
     const [type , setType] = useState("");
     const [yt , setyt] = useState(false);
     const [twt , settwt] = useState(false);
@@ -51,7 +55,9 @@ export default function ModalComponent(props : ModalComponent ){
         })
 
         props.onClose();
-        props.onIncrement();
+        startTransition(() => {
+            setRefresher(refresher + 1);
+        })
 
     }
     return ( <div>
