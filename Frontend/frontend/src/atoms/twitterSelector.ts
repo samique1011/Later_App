@@ -1,6 +1,6 @@
 import { selector } from "recoil";
 import { allContentAtom } from "./allContentAtom";
-type Content = {
+export type Content = {
     _id : string , 
     link : String , 
     tags : Array<any> , 

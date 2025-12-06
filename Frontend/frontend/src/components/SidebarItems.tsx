@@ -3,8 +3,8 @@
 interface SideBarItems {
     title : string , 
     classNameText : string , 
-    classNameSvg: string,
-    icon : any , 
+    classNameSvg?: string,
+    icon? : any , 
     onClickHandler : () => void
 }
 
