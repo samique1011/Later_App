@@ -1,18 +1,6 @@
 import { selector } from "recoil";
 import { allContentAtom } from "./allContentAtom";
-
-type Content = {
-    _id : string , 
-    link : String , 
-    tags : Array<any> , 
-    text : string,
-    title : string , 
-    type : string ,
-    userId : {
-        _id : string,
-        username : string
-    }
-}
+import type { Content } from "./content";
 export const youtubeSelector = selector({
     key : "youtubeSelector" , 
     get : ({get}) => {
